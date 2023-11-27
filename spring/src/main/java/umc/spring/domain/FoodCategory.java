@@ -1,8 +1,11 @@
 package umc.spring.domain;
 
-import jakarta.persistence.*;
 import lombok.*;
 import umc.spring.domain.common.BaseEntity;
+import umc.spring.domain.mapping.MemberPrefer;
+
+import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -14,8 +17,6 @@ public class FoodCategory extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(columnDefinition = "VARCHAR(15)")
+
     private String name;
-
-
 }

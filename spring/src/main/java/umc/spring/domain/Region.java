@@ -1,10 +1,10 @@
 package umc.spring.domain;
 
-import jakarta.persistence.*;
 import lombok.*;
+import lombok.extern.java.Log;
 import umc.spring.domain.common.BaseEntity;
-import umc.spring.domain.mapping.MemberMission;
 
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,9 +18,9 @@ public class Region extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(columnDefinition = "VARCHAR(20)")
-    private String name;
-    @OneToMany(mappedBy = "region", cascade = CascadeType.ALL)
-    private List<Store> StoreList = new ArrayList<>();
 
+    private String name;
+
+    @OneToMany(mappedBy = "region", cascade = CascadeType.ALL)
+    private List<Store> storeList = new ArrayList<>();
 }
