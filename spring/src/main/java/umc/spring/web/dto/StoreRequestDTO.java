@@ -1,10 +1,12 @@
 package umc.spring.web.dto;
 
 import lombok.Getter;
-import umc.spring.validation.annotation.ExistCategories;
+import umc.spring.validation.annotation.ExistMission;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+
+import java.time.LocalDate;
 
 public class StoreRequestDTO {
 
@@ -16,5 +18,20 @@ public class StoreRequestDTO {
         Float score;
         @NotBlank
         String body;
+    }
+    @Getter
+    public static class MissionDTO{
+        @NotNull
+        Integer reward;
+        @NotNull
+        LocalDate deadline;
+        @NotBlank
+        String missionspec;
+    }
+    @Getter
+    public static class ChallengingDTO{
+        @ExistMission
+        Long id;
+
     }
 }
